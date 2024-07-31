@@ -10,7 +10,6 @@ import { EmptyState, SearchInput, Trending, VideoCard } from "../../components";
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
-
   const [refreshing, setRefreshing] = useState(false);
 
   const onRefresh = async () => {
@@ -18,12 +17,6 @@ const Home = () => {
     await refetch();
     setRefreshing(false);
   };
-
-  // one flatlist
-  // with list header
-  // and horizontal flatlist
-
-  //  we cannot do that with just scrollview as there's both horizontal and vertical scroll (two flat lists, within trending)
 
   return (
     <SafeAreaView className="bg-primary">
@@ -47,7 +40,7 @@ const Home = () => {
                   Welcome Back
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
-                  JSMastery
+                  Lovely User
                 </Text>
               </View>
 
